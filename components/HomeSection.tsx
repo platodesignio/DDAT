@@ -219,7 +219,7 @@ export function HomeSection() {
     <div className="bg-[#0a0a0a] min-h-screen">
 
       {/* ── Hero ─────────────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-6 pt-16 pb-12 grid grid-cols-1 xl:grid-cols-[1fr_500px] gap-12 items-center">
+      <div className="max-w-6xl mx-auto px-10 pt-16 pb-12 grid grid-cols-1 xl:grid-cols-[1fr_480px] gap-12 items-center">
 
         {/* Left */}
         <div>
@@ -282,7 +282,7 @@ export function HomeSection() {
 
       {/* ── Stats strip ──────────────────────────────────────────── */}
       <div className="border-t border-b border-[#1f2937]">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-3 divide-x divide-[#1f2937]">
+        <div className="max-w-6xl mx-auto px-10 grid grid-cols-3 divide-x divide-[#1f2937]">
           {[
             { n: "9", label: "Generative Rates", desc: "Multi-dimensional audit vector  V ∈ ℝ⁹" },
             { n: "20", label: "Risk Flags", desc: "Weighted structural closure penalties" },
@@ -299,7 +299,7 @@ export function HomeSection() {
 
       {/* ── Rate vector table ─────────────────────────────────────── */}
       <div className="border-b border-[#1f2937]">
-        <div className="max-w-7xl mx-auto px-6 py-10">
+        <div className="max-w-6xl mx-auto px-10 py-10">
           <p className="font-mono text-[10px] tracking-[0.25em] text-[#374151] uppercase mb-6">
             Audit Vector V = [ IGR, PDFR, MGR, DRGR, SRGR, TIGR, RCR, FGR, HGR ]
           </p>
@@ -316,7 +316,7 @@ export function HomeSection() {
 
       {/* ── Two orbits ───────────────────────────────────────────── */}
       <div className="border-b border-[#1f2937]">
-        <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-2 divide-x divide-[#1f2937]">
+        <div className="max-w-6xl mx-auto px-10 py-12 grid grid-cols-2 divide-x divide-[#1f2937]">
           <div className="pr-12">
             <div className="flex items-center gap-3 mb-5">
               <div className="w-3 h-3 rounded-full bg-[#ef4444]" style={{ boxShadow: "0 0 8px #ef4444" }} />
@@ -360,7 +360,7 @@ export function HomeSection() {
 
       {/* ── Domains ──────────────────────────────────────────────── */}
       <div className="border-b border-[#1f2937]">
-        <div className="max-w-7xl mx-auto px-6 py-8">
+        <div className="max-w-6xl mx-auto px-10 py-8">
           <p className="font-mono text-[10px] tracking-[0.25em] text-[#374151] uppercase mb-5">
             Applicable Domains
           </p>
@@ -375,7 +375,7 @@ export function HomeSection() {
       </div>
 
       {/* ── Final CTA ────────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-6 py-16 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-10 py-16 flex items-center justify-between">
         <div>
           <p className="font-mono text-[10px] tracking-[0.2em] text-[#374151] uppercase mb-2">
             Begin Structural Audit
