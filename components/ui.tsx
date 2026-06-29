@@ -12,7 +12,7 @@ export function Section({ children, className = "" }: { children: ReactNode; cla
 
 export function Card({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
-    <div className={`border border-[#1f2937] bg-[#0d0d0d] p-6 ${className}`}>
+    <div className={`border border-gray-200 bg-white p-6 ${className}`}>
       {children}
     </div>
   )
@@ -20,30 +20,30 @@ export function Card({ children, className = "" }: { children: ReactNode; classN
 
 export function GrayCard({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
-    <div className={`border border-[#1f2937] bg-[#111827] p-5 ${className}`}>
+    <div className={`border border-gray-200 bg-gray-50 p-5 ${className}`}>
       {children}
     </div>
   )
 }
 
 export function PageShell({ children }: { children: ReactNode }) {
-  return <div className="min-h-screen bg-[#0a0a0a]">{children}</div>
+  return <div className="min-h-screen bg-white">{children}</div>
 }
 
 export function StepLabel({ n, label }: { n: number; label: string }) {
   return (
     <div className="mb-8">
-      <p className="font-mono text-[10px] tracking-[0.25em] text-[#3b82f6] uppercase mb-2">
+      <p className="font-mono text-[10px] tracking-[0.25em] text-blue-600 uppercase mb-2">
         Step {n} / 6
       </p>
-      <h2 className="text-3xl font-bold text-white tracking-tight">{label}</h2>
+      <h2 className="text-3xl font-bold text-gray-900 tracking-tight">{label}</h2>
     </div>
   )
 }
 
 export function SectionTitle({ children }: { children: ReactNode }) {
   return (
-    <p className="font-mono text-[10px] font-semibold tracking-[0.2em] text-[#374151] uppercase mb-4">
+    <p className="font-mono text-[10px] font-semibold tracking-[0.2em] text-gray-400 uppercase mb-4">
       {children}
     </p>
   )
@@ -52,10 +52,10 @@ export function SectionTitle({ children }: { children: ReactNode }) {
 export function Field({ label, sub, children }: { label: string; sub?: string; children: ReactNode }) {
   return (
     <div className="space-y-2">
-      <label className="block font-mono text-[10px] font-bold text-[#6b7280] uppercase tracking-[0.15em]">
+      <label className="block font-mono text-[10px] font-bold text-gray-500 uppercase tracking-[0.15em]">
         {label}
       </label>
-      {sub && <p className="text-[11px] text-[#4b5563]">{sub}</p>}
+      {sub && <p className="text-[11px] text-gray-500">{sub}</p>}
       {children}
     </div>
   )
@@ -64,7 +64,7 @@ export function Field({ label, sub, children }: { label: string; sub?: string; c
 export function Input({ className = "", ...props }: InputHTMLAttributes<HTMLInputElement>) {
   return (
     <input
-      className={`w-full border border-[#1f2937] bg-[#111827] px-3 py-2.5 text-sm text-[#e5e7eb] placeholder-[#374151] focus:outline-none focus:border-[#1d4ed8] transition-colors ${className}`}
+      className={`w-full border border-gray-200 bg-white px-3 py-2.5 text-sm text-gray-900 placeholder-gray-300 focus:outline-none focus:border-blue-500 transition-colors ${className}`}
       {...props}
     />
   )
@@ -74,7 +74,7 @@ export function Textarea({ className = "", rows = 3, ...props }: TextareaHTMLAtt
   return (
     <textarea
       rows={rows}
-      className={`w-full border border-[#1f2937] bg-[#111827] px-3 py-2.5 text-sm text-[#e5e7eb] placeholder-[#374151] focus:outline-none focus:border-[#1d4ed8] transition-colors resize-none ${className}`}
+      className={`w-full border border-gray-200 bg-white px-3 py-2.5 text-sm text-gray-900 placeholder-gray-300 focus:outline-none focus:border-blue-500 transition-colors resize-none ${className}`}
       {...props}
     />
   )
@@ -83,7 +83,7 @@ export function Textarea({ className = "", rows = 3, ...props }: TextareaHTMLAtt
 export function Select({ children, className = "", ...props }: SelectHTMLAttributes<HTMLSelectElement> & { children: ReactNode }) {
   return (
     <select
-      className={`w-full border border-[#1f2937] bg-[#111827] px-3 py-2.5 text-sm text-[#e5e7eb] focus:outline-none focus:border-[#1d4ed8] transition-colors ${className}`}
+      className={`w-full border border-gray-200 bg-white px-3 py-2.5 text-sm text-gray-900 focus:outline-none focus:border-blue-500 transition-colors ${className}`}
       {...props}
     >
       {children}
@@ -97,10 +97,10 @@ type ButtonSize = "sm" | "md" | "lg"
 const BTN_BASE = "inline-flex items-center justify-center font-semibold transition-all disabled:opacity-40 disabled:cursor-not-allowed tracking-wide"
 
 const BTN_VARIANT: Record<ButtonVariant, string> = {
-  primary:   "bg-[#1d4ed8] text-white hover:bg-[#2563eb]",
-  secondary: "bg-[#1f2937] text-[#e5e7eb] hover:bg-[#374151]",
-  ghost:     "border border-[#1f2937] text-[#6b7280] hover:border-[#374151] hover:text-[#9ca3af]",
-  danger:    "bg-[#dc2626] text-white hover:bg-[#b91c1c]",
+  primary:   "bg-blue-600 text-white hover:bg-blue-700",
+  secondary: "bg-gray-100 text-gray-700 hover:bg-gray-200",
+  ghost:     "border border-gray-200 text-gray-500 hover:border-gray-400 hover:text-gray-700",
+  danger:    "bg-red-600 text-white hover:bg-red-700",
 }
 
 const BTN_SIZE: Record<ButtonSize, string> = {
@@ -131,8 +131,8 @@ export function Button({
 
 export function PhilosophyBar() {
   return (
-    <div className="border-l-2 border-[#1d4ed8] pl-4 py-1">
-      <p className="text-xs text-[#4b5563] italic">
+    <div className="border-l-2 border-blue-300 pl-4 py-1">
+      <p className="text-xs text-gray-500 italic">
         Measurement is not ontology. A score is not a person. An audit is not a verdict.
       </p>
     </div>
@@ -141,9 +141,9 @@ export function PhilosophyBar() {
 
 export function SystemNotice() {
   return (
-    <div className="border border-[#1f2937] bg-[#0d1117] px-4 py-3">
-      <p className="font-mono text-[10px] text-[#374151] mb-0.5 uppercase tracking-wide">Notice</p>
-      <p className="text-xs text-[#4b5563]">
+    <div className="border border-gray-200 bg-gray-50 px-4 py-3">
+      <p className="font-mono text-[10px] text-gray-400 mb-0.5 uppercase tracking-wide">Notice</p>
+      <p className="text-xs text-gray-500">
         DDAT scores are not judgments of persons. They audit the generative direction of systems, institutions, and decision architectures.
       </p>
     </div>
@@ -152,8 +152,8 @@ export function SystemNotice() {
 
 export function SimulationNotice() {
   return (
-    <div className="border border-[#1f2937] px-4 py-3">
-      <p className="text-xs text-[#4b5563] leading-relaxed">
+    <div className="border border-gray-200 px-4 py-3">
+      <p className="text-xs text-gray-500 leading-relaxed">
         Simulation results are structured audit hypotheses — not predictions. Results depend on entered assumptions and DDAT criteria.
       </p>
     </div>
@@ -161,15 +161,15 @@ export function SimulationNotice() {
 }
 
 const LEVEL_STYLES: Record<string, { color: string; border: string }> = {
-  "Freedom-generative":       { color: "#4ade80", border: "#14532d" },
-  "Conditionally generative": { color: "#60a5fa", border: "#1e3a8a" },
-  "Ambivalent / unstable":    { color: "#fbbf24", border: "#78350f" },
-  "Freedom-closing":          { color: "#fb923c", border: "#7c2d12" },
-  "Severe closure":           { color: "#f87171", border: "#7f1d1d" },
+  "Freedom-generative":       { color: "#16a34a", border: "#86efac" },
+  "Conditionally generative": { color: "#2563eb", border: "#93c5fd" },
+  "Ambivalent / unstable":    { color: "#d97706", border: "#fcd34d" },
+  "Freedom-closing":          { color: "#ea580c", border: "#fdba74" },
+  "Severe closure":           { color: "#dc2626", border: "#fca5a5" },
 }
 
 export function getLevelStyle(level: string) {
-  return LEVEL_STYLES[level] ?? { color: "#6b7280", border: "#1f2937" }
+  return LEVEL_STYLES[level] ?? { color: "#6b7280", border: "#e5e7eb" }
 }
 
 export function LevelBadge({ level }: { level: string }) {

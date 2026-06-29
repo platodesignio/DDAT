@@ -69,25 +69,25 @@ export function ScenarioComparison({ rates, flags, domain, currentDCR }: Props) 
   })
 
   return (
-    <div className="border border-[#e5e7eb] bg-[#0f172a] p-5">
-      <p className="text-[9px] font-bold tracking-[0.15em] text-[#6b7280] uppercase mb-4">
+    <div className="border border-gray-200 bg-white p-5">
+      <p className="text-[9px] font-bold tracking-[0.15em] text-gray-400 uppercase mb-4">
         Scenario Comparison
       </p>
 
       {/* Scenario builder */}
-      <div className="bg-[#0a0a0a] border border-[#1f2937] p-4 mb-4">
+      <div className="bg-gray-50 border border-gray-200 p-4 mb-4">
         <div className="flex items-center gap-3 mb-3">
           <input
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="bg-[#111827] border border-[#1f2937] text-white text-xs px-3 py-1.5 w-32 font-mono focus:outline-none focus:border-[#3b82f6]"
+            className="bg-white border border-gray-200 text-gray-900 text-xs px-3 py-1.5 w-32 font-mono focus:outline-none focus:border-blue-500"
             placeholder="Name"
           />
-          <p className="text-[9px] text-[#4b5563]">{selected.length} interventions selected</p>
+          <p className="text-[9px] text-gray-400">{selected.length} interventions selected</p>
           <button
             onClick={saveScenario}
             disabled={selected.length === 0}
-            className="ml-auto px-3 py-1.5 text-xs bg-[#1d4ed8] text-white font-semibold disabled:opacity-30 hover:bg-[#1e40af] transition-colors"
+            className="ml-auto px-3 py-1.5 text-xs bg-blue-600 text-white font-semibold disabled:opacity-30 hover:bg-blue-700 transition-colors"
           >
             Save Scenario
           </button>
@@ -102,8 +102,8 @@ export function ScenarioComparison({ rates, flags, domain, currentDCR }: Props) 
                 onClick={() => toggle(intv.id)}
                 className={`text-left px-2 py-1.5 text-[9px] border transition-colors ${
                   on
-                    ? "border-[#1d4ed8] bg-[#1e3a8a]/30 text-[#93c5fd]"
-                    : "border-[#1f2937] text-[#6b7280] hover:border-[#374151]"
+                    ? "border-blue-500 bg-blue-50 text-blue-700"
+                    : "border-gray-200 text-gray-500 hover:border-gray-400"
                 }`}
               >
                 {intv.title}
@@ -118,12 +118,12 @@ export function ScenarioComparison({ rates, flags, domain, currentDCR }: Props) 
         <>
           <div className="grid grid-cols-4 gap-2 mb-5">
             {/* Baseline */}
-            <div className="border border-[#1f2937] p-3">
-              <p className="text-[9px] text-[#4b5563] mb-1">Baseline</p>
-              <p className="font-mono text-2xl font-bold text-[#6b7280]">
+            <div className="border border-gray-200 p-3">
+              <p className="text-[9px] text-gray-400 mb-1">Baseline</p>
+              <p className="font-mono text-2xl font-bold text-gray-400">
                 {Math.round(currentDCR)}
               </p>
-              <div className="h-0.5 bg-[#6b7280] mt-2" style={{ width: `${currentDCR}%` }} />
+              <div className="h-0.5 bg-gray-300 mt-2" style={{ width: `${currentDCR}%` }} />
             </div>
 
             {scenarios.map((s, i) => {
@@ -160,11 +160,11 @@ export function ScenarioComparison({ rates, flags, domain, currentDCR }: Props) 
           </div>
 
           {/* Radar comparison */}
-          <div className="bg-[#0a0a0a] border border-[#1f2937] p-4">
-            <p className="text-[9px] text-[#6b7280] mb-3">Generative Rate Comparison</p>
+          <div className="bg-white border border-gray-200 p-4">
+            <p className="text-[9px] text-gray-400 mb-3">Generative Rate Comparison</p>
             <ResponsiveContainer width="100%" height={200}>
               <RadarChart data={scenarioRadarData}>
-                <PolarGrid stroke="#1f2937" />
+                <PolarGrid stroke="#e5e7eb" />
                 <PolarAngleAxis dataKey="subject" tick={{ fontSize: 8, fill: "#4b5563", fontFamily: "monospace" }} />
                 <Radar
                   dataKey="Baseline"

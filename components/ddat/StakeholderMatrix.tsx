@@ -55,7 +55,7 @@ export function StakeholderMatrix({ rates, flags, target }: Props) {
   }
 
   return (
-    <div className="border border-[#e5e7eb] bg-[#0f172a] p-5">
+    <div className="border border-gray-200 bg-white p-5">
       <div className="mb-4">
         <p className="text-[9px] font-bold tracking-[0.15em] text-[#6b7280] uppercase mb-0.5">
           Stakeholder Impact Matrix

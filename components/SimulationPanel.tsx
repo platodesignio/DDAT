@@ -52,7 +52,7 @@ export function SimulationPanel() {
         <StepLabel n={5} label="DDAT Simulation" />
 
         {/* Core equation */}
-        <div className="border border-[#e5e7eb] bg-[#0a0a0a] px-5 py-3 mb-6 font-mono text-xs">
+        <div className="border border-gray-200 bg-gray-50 px-5 py-3 mb-6 font-mono text-xs">
           <span className="text-[#6b7280]">S = {"{ V, R }"}  </span>
           <span className="text-[#6b7280]">S′ = I(S)  </span>
           <span className="font-bold" style={{
@@ -141,20 +141,20 @@ export function SimulationPanel() {
               <div className="space-y-4">
                 <OrbitDiagram current={sim.currentDCR} simulated={selectedIds.length > 0 ? sim.simulatedDCR : undefined} />
                 <div className="grid grid-cols-2 gap-3">
-                  <div className="border border-[#1f2937] bg-[#0d0d0d] p-4">
-                    <p className="text-[9px] font-bold tracking-widest text-[#9ca3af] uppercase mb-2">Current</p>
+                  <div className="border border-gray-200 bg-white p-4">
+                    <p className="text-[9px] font-bold tracking-widest text-gray-400 uppercase mb-2">Current</p>
                     <p className="font-mono text-4xl font-bold" style={{ color: curStyle.color }}>
                       {Math.round(sim.currentDCR.finalDCR)}
                     </p>
                     <LevelBadge level={sim.currentDCR.riskLevel} />
-                    <p className="text-[10px] text-[#9ca3af] mt-2 leading-relaxed">
+                    <p className="text-[10px] text-gray-400 mt-2 leading-relaxed">
                       {sim.currentDCR.directionalJudgment.slice(0, 80)}…
                     </p>
                   </div>
-                  <div className="border p-4 transition-all bg-[#0d0d0d]" style={{
-                    borderColor: selectedIds.length > 0 ? curStyle.border : "#1f2937",
+                  <div className="border p-4 transition-all bg-white" style={{
+                    borderColor: selectedIds.length > 0 ? curStyle.border : "#e5e7eb",
                   }}>
-                    <p className="text-[9px] font-bold tracking-widest text-[#9ca3af] uppercase mb-2">After Interventions</p>
+                    <p className="text-[9px] font-bold tracking-widest text-gray-400 uppercase mb-2">After Interventions</p>
                     <p className="font-mono text-4xl font-bold" style={{ color: simStyle.color }}>
                       {Math.round(sim.simulatedDCR.finalDCR)}
                     </p>

@@ -26,7 +26,7 @@ function Content() {
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-[#0a0a0a]">
+    <div className="min-h-screen bg-white">
       <TopNav />
       <main>
         <Content />

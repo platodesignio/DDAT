@@ -10,17 +10,17 @@ export function TopNav() {
   const { finalDCR, riskLevel } = calculateFinalDCR(state.rates, state.flags, state.target.domain)
 
   const dcrColor =
-    finalDCR >= 80 ? "#4ade80" :
-    finalDCR >= 60 ? "#60a5fa" :
-    finalDCR >= 40 ? "#fbbf24" :
-    finalDCR >= 20 ? "#f97316" : "#f87171"
+    finalDCR >= 80 ? "#16a34a" :
+    finalDCR >= 60 ? "#2563eb" :
+    finalDCR >= 40 ? "#d97706" :
+    finalDCR >= 20 ? "#ea580c" : "#dc2626"
 
   return (
-    <header className="border-b border-[#1f2937] bg-[#0d0d0d] sticky top-0 z-50 no-print">
+    <header className="border-b border-gray-200 bg-white sticky top-0 z-50 no-print">
       <div className="flex items-center justify-between px-6 h-11">
         <button
           onClick={() => dispatch({ type: "SET_STEP", payload: 0 })}
-          className="font-mono text-[11px] font-bold tracking-[0.3em] text-[#f0f0f0] hover:text-[#3b82f6] transition-colors uppercase"
+          className="font-mono text-[11px] font-bold tracking-[0.3em] text-gray-900 hover:text-blue-600 transition-colors uppercase"
         >
           DDAT STUDIO
         </button>
@@ -41,10 +41,10 @@ export function TopNav() {
                 className={`
                   flex items-center gap-1.5 px-3 py-1.5 text-[11px] transition-colors
                   ${active
-                    ? "text-white bg-[#1d4ed8]"
+                    ? "text-white bg-blue-600"
                     : done
-                    ? "text-[#6b7280] hover:text-[#9ca3af] cursor-pointer"
-                    : "text-[#374151] cursor-not-allowed"
+                    ? "text-gray-500 hover:text-gray-700 cursor-pointer"
+                    : "text-gray-300 cursor-not-allowed"
                   }
                 `}
               >
@@ -57,7 +57,7 @@ export function TopNav() {
 
         {state.step > 0 && (
           <div className="flex items-center gap-2 font-mono">
-            <span className="text-[11px] text-[#4b5563]">DCR</span>
+            <span className="text-[11px] text-gray-400">DCR</span>
             <span className="text-base font-bold" style={{ color: dcrColor }}>
               {Math.round(finalDCR)}
             </span>

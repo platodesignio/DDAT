@@ -63,7 +63,7 @@ export function TrajectoryChart({ rates, flags, domain, selectedInterventionIds 
   const CustomTooltip = ({ active, payload, label }: { active?: boolean; payload?: { name: string; value: number; color: string }[]; label?: string }) => {
     if (!active || !payload?.length) return null
     return (
-      <div className="border border-[#374151] bg-[#111827] px-3 py-2">
+      <div className="border border-gray-200 bg-white px-3 py-2">
         <p className="text-[10px] text-[#9ca3af] mb-1">{label}</p>
         {payload.map((p) => (
           <div key={p.name} className="flex items-center gap-2">
@@ -77,7 +77,7 @@ export function TrajectoryChart({ rates, flags, domain, selectedInterventionIds 
   }
 
   return (
-    <div className="border border-[#e5e7eb] bg-[#0f172a] p-5">
+    <div className="border border-gray-200 bg-white p-5">
       <div className="flex justify-between items-start mb-4">
         <div>
           <p className="text-[9px] font-bold tracking-[0.15em] text-[#6b7280] uppercase mb-0.5">

@@ -40,12 +40,12 @@ export function OrbitDiagram({ current, simulated }: Props) {
   const isGenerative = current.finalDCR >= 60
 
   return (
-    <div className="border border-[#e5e7eb] bg-[#0a0a0a] p-4 relative overflow-hidden">
+    <div className="border border-gray-200 bg-white p-4 relative overflow-hidden">
       {/* Title */}
       <div className="flex justify-between items-start mb-3 px-2">
         <div>
-          <p className="text-[9px] font-bold tracking-[0.2em] text-[#6b7280] uppercase">Dialectical Direction Audit Theory</p>
-          <p className="text-sm font-bold text-white tracking-tight">Orbit Position</p>
+          <p className="text-[9px] font-bold tracking-[0.2em] text-gray-400 uppercase">Dialectical Direction Audit Theory</p>
+          <p className="text-sm font-bold text-gray-900 tracking-tight">Orbit Position</p>
         </div>
         <div className="text-right">
           <p className="font-mono text-2xl font-bold" style={{
@@ -101,7 +101,7 @@ export function OrbitDiagram({ current, simulated }: Props) {
         </defs>
 
         {/* Background atmosphere */}
-        <rect width={W} height={H} fill="#0a0a0a" />
+        <rect width={W} height={H} fill="#ffffff" />
 
         {/* Left side glow - closed */}
         <ellipse cx={CX - 180} cy={CY} rx="120" ry="80" fill="url(#glowRed)" />
@@ -117,7 +117,7 @@ export function OrbitDiagram({ current, simulated }: Props) {
             cy={CY}
             r={r}
             fill="none"
-            stroke="#1f2937"
+            stroke="#e5e7eb"
             strokeWidth={i === 0 ? 1.5 : 0.75}
             strokeDasharray={i % 2 === 0 ? "none" : "4 4"}
           />
@@ -143,8 +143,8 @@ export function OrbitDiagram({ current, simulated }: Props) {
         />
 
         {/* Cross lines */}
-        <line x1={CX} y1={CY - 175} x2={CX} y2={CY + 30} stroke="#1f2937" strokeWidth="0.75" />
-        <line x1={CX - 175} y1={CY} x2={CX + 175} y2={CY} stroke="#1f2937" strokeWidth="0.75" />
+        <line x1={CX} y1={CY - 175} x2={CX} y2={CY + 30} stroke="#e5e7eb" strokeWidth="0.75" />
+        <line x1={CX - 175} y1={CY} x2={CX + 175} y2={CY} stroke="#e5e7eb" strokeWidth="0.75" />
 
         {/* Earth / Center */}
         <circle cx={CX} cy={CY} r={28} fill="url(#earthGrad)" />
