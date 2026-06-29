@@ -36,23 +36,23 @@ export function calculateRawDCR(rates: GenerativeRates, domain: AuditDomain): nu
 }
 
 export function getRiskLevel(finalDCR: number): string {
-  if (finalDCR >= 80) return "Freedom-generative"
-  if (finalDCR >= 60) return "Conditionally generative"
-  if (finalDCR >= 40) return "Ambivalent / unstable"
-  if (finalDCR >= 20) return "Freedom-closing"
-  return "Severe closure"
+  if (finalDCR >= 80) return "Directionally generative"
+  if (finalDCR >= 60) return "Conditionally acceptable"
+  if (finalDCR >= 40) return "High future-closure risk"
+  if (finalDCR >= 20) return "Future-closure risk: significant"
+  return "Future-closure risk: severe"
 }
 
 export function getDirectionalJudgment(finalDCR: number): string {
   if (finalDCR >= 80)
-    return "This system is broadly freedom-generative, provided that periodic re-audit, appeal, and context recovery remain active."
+    return "Acceptable with institutional safeguards. The system shows directionally generative tendencies, but requires periodic re-audit, active appeal mechanisms, and ongoing responsibility monitoring."
   if (finalDCR >= 60)
-    return "This system is conditionally freedom-generative, but it contains unresolved risks that may become freedom-closing under institutional pressure."
+    return "Conditionally acceptable. Requires contextual recovery and appeal pathways before deployment in high-impact contexts. Unresolved closure risks may compound under institutional pressure."
   if (finalDCR >= 40)
-    return "This system is directionally unstable. It contains both generative and closing tendencies. It should not be deployed without redesign."
+    return "High future-closure risk unless re-entry mechanisms, responsibility allocation, and contextual recovery are added. Not suitable for high-impact decision-making in its current form."
   if (finalDCR >= 20)
-    return "This system is freedom-closing. It narrows future possibilities, weakens re-entry, and risks converting measurement into institutional fate."
-  return "This system shows severe closure. It should be suspended, redesigned, or rejected before deployment."
+    return "Requires responsibility allocation before deployment. The system shows significant future-closure risk through proxy discrimination, opacity, or absence of re-entry pathways."
+  return "Not suitable for high-impact decision-making in its current form. The system presents severe future-closure risk. Requires fundamental redesign before any deployment."
 }
 
 export function calculateFinalDCR(

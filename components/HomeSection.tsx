@@ -127,13 +127,13 @@ function OverviewTab() {
           onClick={() => dispatch({ type: "SET_STEP", payload: 1 })}
           className="bg-gray-900 text-white text-sm font-semibold px-6 py-3 hover:bg-gray-700 transition-colors tracking-wide"
         >
-          Begin Audit →
+          Start Structured Audit →
         </button>
         <a
           href="/agent-council"
           className="text-sm text-blue-600 hover:text-blue-800 transition-colors font-mono"
         >
-          → Multi-Agent Audit Network
+          → Structured DDAT Audit Module
         </a>
       </div>
     </div>

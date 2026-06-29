@@ -12,13 +12,13 @@ import { FinalReport } from "@/components/madan/FinalReport"
 
 const PHASE_LABELS: Record<string, string> = {
   input: "Input",
-  parsing: "Phase 1 — Parsing",
-  "parallel-analysis": "Phase 2 — Parallel Analysis",
-  "inter-agent-debate": "Phase 3 — Inter-Agent Debate",
-  "red-team": "Phase 4 — Red Team",
+  parsing: "Phase 1 — Scenario Parsing",
+  "parallel-analysis": "Phase 2 — Perspective Analysis",
+  "inter-agent-debate": "Phase 3 — Cross-Perspective Review",
+  "red-team": "Phase 4 — Adversarial Check",
   synthesis: "Phase 5 — Synthesis",
-  judgment: "Phase 6 — Judgment",
-  complete: "Complete",
+  judgment: "Phase 6 — Directional Judgment",
+  complete: "Review Complete",
 }
 
 type CenterTab = "overview" | "log" | "report"
@@ -41,10 +41,10 @@ export function AgentCouncilPage() {
               <div className="flex items-center gap-3 mb-1">
                 <a href="/" className="text-[10px] text-gray-400 hover:text-gray-600 transition-colors">← DDAT Studio</a>
                 <span className="text-gray-200">|</span>
-                <span className="text-[10px] text-gray-400 font-mono">MADAN v1.0</span>
+                <span className="text-[10px] text-gray-400 font-mono">Multi-Perspective Audit Module</span>
               </div>
-              <h1 className="text-2xl font-black text-gray-900 tracking-tight">Agent Council</h1>
-              <p className="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mt-0.5">Dialectical Audit Network</p>
+              <h1 className="text-xl font-bold text-gray-900 tracking-tight">Structured DDAT Audit</h1>
+              <p className="text-[11px] text-gray-400 mt-0.5">Scenario-Based Institutional Review</p>
             </div>
             <div className="text-right flex flex-col items-end gap-2">
               {!isInput && (
@@ -76,14 +76,12 @@ export function AgentCouncilPage() {
             </div>
           </div>
 
-          {/* Axioms */}
-          <div className="mt-3 grid grid-cols-2 gap-4 border-t border-gray-100 pt-3">
-            <blockquote className="text-[10px] text-gray-500 italic leading-relaxed">
-              "DDAT does not ask whether a system is efficient. It asks whether the system expands or reduces the reachable futures of human and ecological life."
-            </blockquote>
-            <blockquote className="text-[10px] text-gray-500 italic leading-relaxed">
-              "Scores are treated as audit objects, not as final truth."
-            </blockquote>
+          {/* Method statement */}
+          <div className="mt-3 border-t border-gray-100 pt-3">
+            <p className="text-[10px] text-gray-500 leading-relaxed">
+              A scenario-based review module for examining how a decision system affects appeal, re-entry, responsibility allocation, context recovery, bodily burden, temporal development, and future possibility.
+              DDAT audits decision architectures — not persons.
+            </p>
           </div>
         </div>
       </header>
@@ -115,7 +113,7 @@ export function AgentCouncilPage() {
                           : "text-gray-500 hover:text-gray-800 hover:bg-gray-50"
                       }`}
                     >
-                      {tab === "overview" ? "Network Overview" : tab === "log" ? "Message Log" : "Report"}
+                      {tab === "overview" ? "Perspective Overview" : tab === "log" ? "Review Log" : "Audit Report"}
                     </button>
                   ))}
                   <div className="ml-auto flex items-center gap-2">
@@ -179,7 +177,7 @@ export function AgentCouncilPage() {
 
               {/* Right: Audit Log */}
               <div className="w-72 shrink-0 overflow-y-auto border border-gray-100 rounded-xl p-3">
-                <p className="font-mono text-[9px] text-gray-400 uppercase tracking-widest mb-3 px-1">Live Audit Log</p>
+                <p className="font-mono text-[9px] text-gray-400 uppercase tracking-widest mb-3 px-1">Review Log</p>
                 <AuditLog compact />
               </div>
             </div>

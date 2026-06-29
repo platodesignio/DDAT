@@ -12,7 +12,11 @@ const DEFAULT_SCENARIO: AuditScenario = {
   evaluationMechanism: "",
   dataSources: "",
   decisionConsequences: "",
+  appealMechanism: "",
   reentryMechanism: "",
+  contextRecovery: "",
+  responsibilityAllocation: "",
+  bodilyBurden: "",
   knownRisks: "",
   desiredFutureDirection: "",
 }

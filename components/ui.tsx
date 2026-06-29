@@ -161,11 +161,11 @@ export function SimulationNotice() {
 }
 
 const LEVEL_STYLES: Record<string, { color: string; border: string }> = {
-  "Freedom-generative":       { color: "#16a34a", border: "#86efac" },
-  "Conditionally generative": { color: "#2563eb", border: "#93c5fd" },
-  "Ambivalent / unstable":    { color: "#d97706", border: "#fcd34d" },
-  "Freedom-closing":          { color: "#ea580c", border: "#fdba74" },
-  "Severe closure":           { color: "#dc2626", border: "#fca5a5" },
+  "Directionally generative":         { color: "#16a34a", border: "#86efac" },
+  "Conditionally acceptable":         { color: "#2563eb", border: "#93c5fd" },
+  "High future-closure risk":         { color: "#d97706", border: "#fcd34d" },
+  "Future-closure risk: significant": { color: "#ea580c", border: "#fdba74" },
+  "Future-closure risk: severe":      { color: "#dc2626", border: "#fca5a5" },
 }
 
 export function getLevelStyle(level: string) {

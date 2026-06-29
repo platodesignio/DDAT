@@ -66,7 +66,11 @@ export type AuditScenario = {
   evaluationMechanism: string
   dataSources: string
   decisionConsequences: string
+  appealMechanism: string
   reentryMechanism: string
+  contextRecovery: string
+  responsibilityAllocation: string
+  bodilyBurden: string
   knownRisks: string
   desiredFutureDirection: string
 }

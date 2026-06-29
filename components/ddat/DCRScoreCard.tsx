@@ -3,11 +3,11 @@
 import type { DCRResult } from "@/types/ddat"
 
 const LEVEL_COLOR: Record<string, string> = {
-  "Freedom-generative":       "#16a34a",
-  "Conditionally generative": "#1d4ed8",
-  "Ambivalent / unstable":    "#d97706",
-  "Freedom-closing":          "#ea580c",
-  "Severe closure":           "#dc2626",
+  "Directionally generative":        "#16a34a",
+  "Conditionally acceptable":        "#1d4ed8",
+  "High future-closure risk":        "#d97706",
+  "Future-closure risk: significant": "#ea580c",
+  "Future-closure risk: severe":     "#dc2626",
 }
 
 function color(level: string) {
@@ -77,8 +77,8 @@ export function DCRScoreCard({ result, label, compact = false }: Props) {
         />
       </div>
       <div className="flex justify-between text-[10px] text-gray-400">
-        <span>0 — Severe closure</span>
-        <span>100 — Freedom-generative</span>
+        <span>0 — Severe future-closure risk</span>
+        <span>100 — Directionally generative</span>
       </div>
 
       <div className="border-t border-gray-100 pt-3">
