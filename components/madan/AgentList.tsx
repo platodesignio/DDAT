@@ -37,7 +37,7 @@ export function AgentList() {
 
   return (
     <div className="flex flex-col gap-1 overflow-y-auto h-full py-2">
-      <p className="text-[11px] font-semibold text-gray-400 uppercase tracking-wider px-2 pb-1">Agent Council</p>
+      <p className="text-[11px] font-semibold text-gray-400 uppercase tracking-wider px-2 pb-1">Audit Perspectives</p>
       {state.agents.map((agent) => {
         const isActive = state.activeAgentId === agent.id
         const accent = AGENT_ACCENT_COLORS[agent.id]

@@ -45,7 +45,7 @@ export function OrbitDiagram({ current, simulated }: Props) {
       <div className="flex justify-between items-start mb-3 px-2">
         <div>
           <p className="text-[9px] font-bold tracking-[0.2em] text-gray-400 uppercase">Dialectical Direction Audit Theory</p>
-          <p className="text-sm font-bold text-gray-900 tracking-tight">Orbit Position</p>
+          <p className="text-sm font-bold text-gray-900 tracking-tight">Directional Audit Position</p>
         </div>
         <div className="text-right">
           <p className="font-mono text-2xl font-bold" style={{
@@ -153,17 +153,17 @@ export function OrbitDiagram({ current, simulated }: Props) {
 
         {/* Orbit labels */}
         <text x={CX - 210} y={CY - 30} textAnchor="middle" fontSize="7" fill="#6b7280" fontWeight="bold" letterSpacing="2">
-          CLOSED
+          FUTURE-CLOSURE
         </text>
         <text x={CX - 210} y={CY - 20} textAnchor="middle" fontSize="7" fill="#6b7280" letterSpacing="1">
-          SCORE ORBIT
+          MECHANISM
         </text>
 
         <text x={CX + 210} y={CY - 30} textAnchor="middle" fontSize="7" fill="#3b82f6" fontWeight="bold" letterSpacing="2">
-          FREEDOM
+          RE-ENTRY
         </text>
         <text x={CX + 210} y={CY - 20} textAnchor="middle" fontSize="7" fill="#3b82f6" letterSpacing="1">
-          EVOLUTION ORBIT
+          &amp; SUPPORT
         </text>
 
         {/* Simulated position (ghost) */}
@@ -278,7 +278,7 @@ export function OrbitDiagram({ current, simulated }: Props) {
         )}
         <div className="flex items-center gap-1.5">
           <span className="w-4 h-px bg-[#3b82f6] inline-block" />
-          <span className="text-[9px] text-[#6b7280]">Freedom-evolution orbit</span>
+          <span className="text-[9px] text-[#6b7280]">Re-entry &amp; support</span>
         </div>
       </div>
     </div>
