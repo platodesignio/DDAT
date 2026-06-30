@@ -56,15 +56,21 @@ const Ctx = createContext<{ state: State; dispatch: React.Dispatch<Action> } | n
 export function StoreProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(reducer, INITIAL)
 
-  // Hydrate from localStorage
+  // Hydrate from localStorage, allow ?step=N URL param for demos
   useEffect(() => {
+    const urlStep = new URLSearchParams(window.location.search).get("step")
+    const stepFromUrl = urlStep !== null ? (parseInt(urlStep, 10) as Step) : null
     try {
       const saved = localStorage.getItem(STORAGE_KEY)
       if (saved) {
         const parsed = JSON.parse(saved) as State
-        dispatch({ type: "HYDRATE", payload: { ...INITIAL, ...parsed, step: 0 } })
+        dispatch({ type: "HYDRATE", payload: { ...INITIAL, ...parsed, step: stepFromUrl ?? 0 } })
+      } else if (stepFromUrl !== null) {
+        dispatch({ type: "SET_STEP", payload: stepFromUrl })
       }
-    } catch {}
+    } catch {
+      if (stepFromUrl !== null) dispatch({ type: "SET_STEP", payload: stepFromUrl })
+    }
   }, [])
 
   // Persist to localStorage (exclude step)
