@@ -54,7 +54,7 @@ function OverviewTab() {
         <div className="space-y-3 text-sm text-gray-600 leading-relaxed">
           <p>
             <span className="font-mono text-gray-800">V</span> is the audit vector consisting of nine
-            generative rate scores, each evaluated on a 0–5 scale.
+            generative-rate evaluations, each assessed on a 0–5 scale.
           </p>
           <p>
             <span className="font-mono text-gray-800">F*</span> is the reference vector representing a

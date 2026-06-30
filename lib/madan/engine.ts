@@ -393,10 +393,10 @@ const AGENT_ANALYSIS_BUILDERS: Record<AgentId, (s: ScenarioSignals, scenario: Au
     `RED TEAM FINDINGS for "${sc.title}": (1) EVIDENTIARY CHALLENGE — The claim that "${sc.evaluationMechanism.slice(0, 80)}" constitutes valid measurement of the capacities claimed requires independent replication in deployment conditions matching actual affected populations. Validation against historical decisions circularity-validates bias. (2) COUNTERFACTUAL CHALLENGE — Efficiency arguments compare this system against nothing, never against better-designed alternatives. (3) OVERCLAIMING — ${s.transgressionSeverity > 0.3 ? "Biometric/behavioral inputs are used to generate social-sorting conclusions with epistemic reach that exceeds what the measurement form can support." : "The system's claimed predictive reach exceeds what its data sources and mechanism design can epistemically support."} (4) STRUCTURAL CRITIQUE — The desired future direction ("${sc.desiredFutureDirection.slice(0, 80)}") requires institutional redesign, not parameter adjustment.`,
 
   "synthesis-agent": (s, sc) =>
-    `Synthesis: Agent council converges on three structural findings about "${sc.title}": (1) Measurement exclusion — the system treats as non-existent what it cannot measure, generating a false completeness effect; (2) Re-entry inadequacy — ${s.reentryQuality < 0.4 ? "re-entry pathways are procedurally present but materially empty" : "re-entry pathways exist but shift the burden of institutional error correction entirely onto affected individuals"}; (3) Responsibility asymmetry — ${sc.targetPopulation.slice(0, 60)} bear the costs of system errors while the institution retains classification authority without analogous accountability. The Red Team challenge and Nine-Rates assessment agree on: FGR, SRGR, and RCR as most critically impacted rates. Unresolved: whether re-entry reform is sufficient for remediation, or whether structural abolition of automated consequential decision-making is required.`,
+    `Synthesis: Cross-perspective review converges on three structural findings about "${sc.title}": (1) Measurement exclusion — the system treats as non-existent what it cannot measure, generating a false completeness effect; (2) Re-entry inadequacy — ${s.reentryQuality < 0.4 ? "re-entry pathways are procedurally present but materially empty" : "re-entry pathways exist but shift the burden of institutional error correction entirely onto affected individuals"}; (3) Responsibility asymmetry — ${sc.targetPopulation.slice(0, 60)} bear the costs of system errors while the institution retains classification authority without analogous accountability. The adversarial check and nine-rate evaluation agree on: FGR, SRGR, and RCR as most critically affected rates. Unresolved: whether re-entry reform is sufficient for remediation, or whether structural abolition of automated consequential decision-making is required.`,
 
   "ddat-judge": (s, sc) =>
-    `DDAT Judgment on "${sc.title}": Based on full agent council audit, this system generates a net ${s.consequenceSeverity > 0.6 || s.reentryQuality < 0.3 ? "negative" : "ambiguous"} impact on the reachable futures of ${sc.targetPopulation.slice(0, 60)}. Key findings: automation level ${Math.round(s.automationLevel * 100)}%, transparency ${Math.round(s.transparencyLevel * 100)}%, re-entry quality ${Math.round(s.reentryQuality * 100)}%, bias evidence index ${Math.round(s.biasEvidence * 100)}%. ${s.biasEvidence > 0.4 && s.reentryQuality < 0.4 ? "The combination of documented bias and inadequate re-entry constitutes structural closure, not implementation error." : "Remediation conditions exist but require institutional redesign, not calibration."} Directional assessment follows DCR calculation.`,
+    `DDAT Directional Assessment of "${sc.title}": Based on full structured audit, this system generates a net ${s.consequenceSeverity > 0.6 || s.reentryQuality < 0.3 ? "negative" : "ambiguous"} impact on the reachable futures of ${sc.targetPopulation.slice(0, 60)}. Key findings: automation level ${Math.round(s.automationLevel * 100)}%, transparency ${Math.round(s.transparencyLevel * 100)}%, re-entry quality ${Math.round(s.reentryQuality * 100)}%, bias evidence index ${Math.round(s.biasEvidence * 100)}%. ${s.biasEvidence > 0.4 && s.reentryQuality < 0.4 ? "The combination of documented bias and inadequate re-entry constitutes structural closure, not implementation error." : "Remediation conditions exist but require institutional redesign, not calibration."} Directional assessment follows DCR Directional Audit Index calculation.`,
 }
 
 export function runAgentAnalysis(agent: AuditAgent, scenario: AuditScenario): Partial<AuditAgent> {
@@ -599,9 +599,9 @@ export function generateAgentDisagreements(agents: AuditAgent[], scenario: Audit
     disagreements.push({
       agentA: "red-team-auditor",
       agentB: "nine-rates-auditor",
-      topic: "Evidentiary standard for rate scoring",
-      positionA: rt.analysisOutput?.slice(0, 160) ?? "Red Team: Evidentiary basis for rate assignments is insufficiently rigorous.",
-      positionB: "Nine-Rates Auditor: Scores are computed deterministically from scenario text analysis; the evidentiary challenge applies to the input scenario's self-description, not to the rating methodology.",
+      topic: "Evidentiary standard for generative-rate evaluation",
+      positionA: rt.analysisOutput?.slice(0, 160) ?? "Adversarial Check: Evidentiary basis for rate evaluations is insufficiently rigorous.",
+      positionB: "Nine-Rates Auditor: Evaluations are derived deterministically from scenario text analysis; the evidentiary challenge applies to the input scenario's self-description, not to the evaluation methodology.",
       severity: s.biasEvidence > 0.4 ? 4 : 3,
     })
   }
@@ -628,8 +628,8 @@ export function generateAgentDisagreements(agents: AuditAgent[], scenario: Audit
       agentA: "body-load-auditor",
       agentB: "synthesis-agent",
       topic: "Inclusion of somatic / body-load costs in formal audit framework",
-      positionA: bla.analysisOutput?.slice(0, 160) ?? "Body-Load Auditor: Chronic stress, self-censorship, and anticipatory compliance costs are real and compounding but not captured in DCR scoring.",
-      positionB: "Synthesis Agent: Body-load costs are acknowledged as structurally significant but are not currently reducible to a rate score without speculative assumptions. They should appear as a risk flag rather than a scored variable.",
+      positionA: bla.analysisOutput?.slice(0, 160) ?? "Body-Load Auditor: Chronic stress, self-censorship, and anticipatory compliance costs are real and compounding but not captured in the DCR Directional Audit Index.",
+      positionB: "Synthesis Agent: Body-load costs are acknowledged as structurally significant but are not currently reducible to a generative-rate evaluation without speculative assumptions. They should appear as a risk flag rather than a rated variable.",
       severity: 3,
     })
   }
