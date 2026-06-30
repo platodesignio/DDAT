@@ -57,7 +57,7 @@ export function TopNav() {
 
         {state.step > 0 && (
           <div className="flex items-center gap-2 font-mono">
-            <span className="text-[11px] text-gray-400">DCR Index</span>
+            <span className="text-[11px] text-gray-400">DCR</span>
             <span className="text-base font-bold" style={{ color: dcrColor }}>
               {Math.round(finalDCR)}
             </span>
