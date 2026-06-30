@@ -35,7 +35,7 @@ export function AuditForm() {
         <Card>
           <div className="grid grid-cols-2 gap-6 mb-6">
             <Field label="Audit Title">
-              <Input value={t.auditTitle} onChange={set("auditTitle")} placeholder="e.g. AI Hiring Score Audit" />
+              <Input value={t.auditTitle} onChange={set("auditTitle")} placeholder="e.g. AI Hiring System Audit" />
             </Field>
             <Field label="Domain">
               <Select value={t.domain} onChange={set("domain")}>

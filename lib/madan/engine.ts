@@ -28,15 +28,15 @@ export interface NetworkEdge {
 // ─── Nine rate definitions ────────────────────────────────────────────────────
 
 const NINE_RATES = [
-  { key: "IGR",    label: "Information Generative Rate" },
-  { key: "PDF-GR", label: "Pre-Difference Field Generative Rate" },
-  { key: "MGR",    label: "Meaning / Truth-Feeling Generative Rate" },
-  { key: "D-RGR",  label: "Division-of-Labor / Relation Generative Rate" },
-  { key: "SRGR",   label: "Social Responsibility Generative Rate" },
-  { key: "TIGR",   label: "Time Generative Rate" },
-  { key: "RCR",    label: "Return Capacity Rate" },
-  { key: "FGR",    label: "Freedom Generative Rate" },
-  { key: "HGR",    label: "Historical Generative Rate" },
+  { key: "IGR",    label: "Information Generation Rate" },
+  { key: "PDFR",   label: "Pre-Difference Field Generation Rate" },
+  { key: "MGR",    label: "Meaning / Truth-Feeling Generation Rate" },
+  { key: "D-RGR",  label: "Division-of-Labor Relational Generation Rate" },
+  { key: "SRGR",   label: "Responsibility Generation Rate" },
+  { key: "TIGR",   label: "Temporal Integration Generation Rate" },
+  { key: "RCR",    label: "Reality / Bodily Return Capacity Rate" },
+  { key: "FGR",    label: "Freedom Generation Rate" },
+  { key: "HGR",    label: "Historical Generation Rate" },
 ]
 
 // ─── Deterministic signal extraction ─────────────────────────────────────────
@@ -303,18 +303,18 @@ function rateRationale(key: string, score: number, s: ScenarioSignals, scenario:
         : `No effective appeal or return mechanism is identified. ${pop} who receive adverse decisions have no institutional pathway for restoration.`
     case "FGR":
       return s.consequenceSeverity > 0.7
-        ? `Decision consequences — "${scenario.decisionConsequences.slice(0, 80)}" — substantially reduce the behavioral autonomy and life-choice space of ${pop}. Freedom generation is negative: the system closes more options than it opens.`
+        ? `Decision consequences — "${scenario.decisionConsequences.slice(0, 80)}" — substantially reduce the practical pathways available to ${pop}. The system closes more future possibilities than it opens.`
         : s.surveillanceLoad > 0.5
-        ? `Pervasive monitoring creates compliance pressure that substitutes for genuine freedom. ${pop} modify behavior to optimize scores rather than pursue authentic life directions.`
-        : `Freedom generation is constrained but not abolished. Limited choice preservation exists within the system's evaluation scope.`
+        ? `Pervasive monitoring creates compliance pressure. ${pop} modify behavior to optimize outputs rather than pursue contextually meaningful directions. Practical future pathways are narrowed.`
+        : `Future-possibility generation is constrained but not abolished. Limited pathway preservation exists within the system's evaluation scope.`
     case "HGR":
       return s.historicalBias > 0.5
-        ? `The data sources (${scenario.dataSources.slice(0, 80)}) encode historical patterns of exclusion. Training on historical decisions perpetuates structural inequities rather than correcting them. Historical generativity is negative.`
+        ? `The data sources (${scenario.dataSources.slice(0, 80)}) encode historical patterns of exclusion. Training on historical decisions perpetuates structural inequities rather than correcting them. HGR is negative.`
         : s.biasEvidence > 0.5
         ? `Documented bias evidence indicates that the system's outputs reflect historical structural damage to ${pop} rather than current potential. HGR is reduced by this perpetuation.`
         : s.vulnerablePopulation
         ? `${pop} carry accumulated historical disadvantage. The system's current design does not include mechanisms to compensate for differential historical starting conditions.`
-        : `Historical generativity is partially present. The system does not explicitly correct for structural historical disadvantages affecting its target population.`
+        : `HGR is partially present. The system does not explicitly correct for structural historical disadvantages affecting its target population.`
     default:
       return `Score of ${score} reflects ${scenario.title}'s impact on this generative rate.`
   }
@@ -354,7 +354,7 @@ const AGENT_ANALYSIS_BUILDERS: Record<AgentId, (s: ScenarioSignals, scenario: Au
     `R(x) impact assessment for "${sc.title}": The reachable state space for ${sc.targetPopulation.slice(0, 80)} is ${s.consequenceSeverity > 0.6 ? "substantially contracted" : "moderately reduced"}. Decision consequences — "${sc.decisionConsequences.slice(0, 100)}" — create path-dependent closures that compound over time. Re-entry quality index: ${Math.round(s.reentryQuality * 100)}% — ${s.reentryQuality < 0.3 ? "critically inadequate" : s.reentryQuality < 0.6 ? "partially functional" : "present but structurally burdened"}. Estimated reachable-state impact: ${s.consequenceSeverity > 0.6 ? "significant reduction in accessible futures" : "moderate reduction with some preservation of alternatives"}.`,
 
   "nine-rates-auditor": (s, sc) =>
-    `Nine-rate profile for "${sc.title}": Critical rates — RCR: ${Math.round(s.reentryQuality * 10 - 5)} (re-entry), FGR: ${Math.round((1 - s.consequenceSeverity) * 10 - 5)} (freedom), IGR: ${Math.round((s.transparencyLevel - 0.5) * 6)} (information). Structural weaknesses: ${[
+    `Nine-rate profile for "${sc.title}": Critical rates — RCR: ${Math.round(s.reentryQuality * 10 - 5)} (bodily return capacity), FGR: ${Math.round((1 - s.consequenceSeverity) * 10 - 5)} (future possibilities), IGR: ${Math.round((s.transparencyLevel - 0.5) * 6)} (information access). Structural weaknesses: ${[
       s.automationLevel > 0.6 ? "automation suppresses PDF-GR and MGR" : null,
       s.surveillanceLoad > 0.5 ? "surveillance load depresses FGR and MGR" : null,
       s.responsibilityAsymmetry > 0.5 ? "responsibility asymmetry blocks SRGR" : null,
