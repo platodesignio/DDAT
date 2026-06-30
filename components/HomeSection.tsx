@@ -58,8 +58,8 @@ function OverviewTab() {
           </p>
           <p>
             <span className="font-mono text-gray-800">F*</span> is the reference vector representing a
-            fully freedom-generating institutional design, derived from capability theory and
-            institutional design principles.
+            a maximally generative institutional design — one that expands re-entry, responsibility,
+            contextual recovery, and future possibility — derived from capability theory and institutional design principles.
           </p>
           <p>
             <span className="font-mono text-gray-800">Σ penalties · λ</span> represents weighted

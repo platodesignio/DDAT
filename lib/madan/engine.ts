@@ -485,7 +485,7 @@ const MESSAGE_TEMPLATES: Partial<Record<AgentId, Record<string, string>>> = {
   },
   "nine-rates-auditor": {
     analysis: "Nine-rate profile: RCR and FGR are most severely impacted. IGR is suppressed by information opacity in {title}. All scores are computed deterministically from scenario signal analysis — re-run produces identical results.",
-    synthesis: "Rates most requiring immediate intervention: RCR (return capacity), FGR (freedom generation), SRGR (social responsibility). These three rates co-vary with the re-entry mechanism quality and consequence severity.",
+    synthesis: "Rates most requiring immediate intervention: RCR (bodily return capacity), FGR (future possibility), SRGR (institutional responsibility). These three rates co-vary with the re-entry mechanism quality and consequence severity.",
   },
   "reentry-auditor": {
     critique: "The re-entry mechanism places the full burden of contesting institutional error on {pop}. This is asymmetric accountability: the institution scores, the individual must disprove. Procedural re-entry without material re-entry is institutional theater.",
@@ -508,12 +508,12 @@ const MESSAGE_TEMPLATES: Partial<Record<AgentId, Record<string, string>>> = {
     contradiction: "The efficiency argument for {title} assumes that current outcomes without the system are worse. This counterfactual is never tested. The comparison class is always 'this system vs. nothing' — never 'this system vs. better-designed alternatives.' This asymmetry is not an oversight; it is structural.",
   },
   "synthesis-agent": {
-    synthesis: "Synthesizing council outputs: convergence on measurement exclusion, re-entry inadequacy, and responsibility asymmetry as structural findings. Productive disagreement between red-team evidentiary challenge and nine-rates assessment remains unresolved. Recommendation: further audit conditions specified, not verdict closure.",
-    analysis: "The audit reveals a system architecture where individual technical fixes cannot address structural problems. The council does not recommend treating this as a calibration problem.",
+    synthesis: "Synthesizing audit perspective outputs: convergence on measurement exclusion, re-entry inadequacy, and responsibility asymmetry as structural findings. Productive disagreement between adversarial check and nine-rate evaluation remains unresolved. Recommendation: further audit conditions specified, not verdict closure.",
+    analysis: "The audit reveals a system architecture where individual technical fixes cannot address structural problems. This is not a calibration problem.",
   },
   "ddat-judge": {
     judgment: "Preliminary judgment: {title} presents as a technical measurement system while functioning as a structural sorting mechanism allocating futures to {pop} based on metrics that confound measurement validity with social authority. This is a design choice, not a technical inevitability.",
-    synthesis: "Final integrative assessment: the weight of council evidence supports a Freedom-Closing directional assessment unless the structural redesign conditions specified in the synthesis report are implemented prior to continued deployment.",
+    synthesis: "Final integrative assessment: the weight of structured audit evidence supports a high future-closure risk assessment unless the structural redesign conditions specified in the synthesis report are implemented prior to continued deployment.",
   },
 }
 
